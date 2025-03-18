@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Outfit:wght@100..900&display=swap');
+@import '@/styles/index.scss';
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: $white;
+  color: $black;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .screenWidthWarning {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 100vh;
+    padding-inline: 15px;
+
+    img {
+      width: 40px;
+    }
+
+    p {
+      text-wrap: balance;
+      font-size: 17px;
+      text-align: center;
+      line-height: 21px;
+    }
+  }
+
+  @media (max-width: 319.9px) {
+    .screenWidthWarning {
+      display: flex;
+    }
+
+    .screenContent {
+      display: none;
+    }
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
