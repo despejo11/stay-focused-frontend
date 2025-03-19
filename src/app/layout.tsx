@@ -1,5 +1,6 @@
 import './global.scss'
 import '@/styles/index.scss'
+import ThemeProvider from '@/providers/ThemeProvider'
 
 export default function RootLayout({
   children,
@@ -12,15 +13,17 @@ export default function RootLayout({
         <title>Stay Focused</title>
       </head>
       <body>
-        <div className='screenWidthWarning'>
-          <img src='/images/other/logoBlue.svg' alt='Logo' />
-          <p>
-            Only for devices <br />
-            wider than 320px!
-          </p>
-        </div>
+        <ThemeProvider>
+          <div className='screenWidthWarning'>
+            <img src='/images/other/logoBlue.svg' alt='Logo' />
+            <p>
+              Only for devices <br />
+              wider than 320px!
+            </p>
+          </div>
 
-        <div className='screenContent'>{children}</div>
+          <div className='screenContent'>{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   )

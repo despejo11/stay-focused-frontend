@@ -1,0 +1,14 @@
+@import '@/styles/index.scss';
+
+.toggle {
+  background-color: $darkBlue;
+  border-radius: 50%;
+  border: 1.4px solid $gray;
+  padding: 5.4px;
+  cursor: pointer;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
