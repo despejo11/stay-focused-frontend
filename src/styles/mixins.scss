@@ -1,0 +1,23 @@
+@mixin defaultButton(
+  $width,
+  $height,
+  $font-size,
+  $background-color,
+  $border-color
+) {
+  @extend %defaultButton;
+  width: #{$width};
+  height: #{$height};
+  font-size: #{$font-size};
+  background-color: #{$background-color};
+  border-color: #{$border-color};
+}
+
+@mixin hover($background-color, $color) {
+  @media (min-width: 1000px) {
+    &:hover {
+      background-color: #{$background-color};
+      color: #{$color};
+    }
+  }
+}

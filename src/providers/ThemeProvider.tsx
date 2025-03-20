@@ -1,6 +1,6 @@
 'use client'
 
-import useLocalStorage from '@/components/hooks/useLocalStorage'
+import useLocalStorage from '@/hooks/useLocalStorage'
 import { createContext, useEffect, ReactNode } from 'react'
 
 type ThemeContextType = [string, React.Dispatch<React.SetStateAction<string>>]

@@ -6,9 +6,12 @@
   border: 1.4px solid $gray;
   padding: 5.4px;
   cursor: pointer;
+  transition: $tr background-color;
 
   img {
     width: 20px;
     height: 20px;
   }
+
+  @include hover($gray, null);
 }

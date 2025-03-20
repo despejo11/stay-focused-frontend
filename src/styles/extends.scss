@@ -1,0 +1,13 @@
+%defaultButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  border: 2px solid;
+  color: $white;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  transition: $tr background-color;
+}
