@@ -3,14 +3,14 @@
 .toggle {
   background-color: $darkBlue;
   border-radius: 50%;
-  border: 1.4px solid $gray;
-  padding: 5.4px;
+  border: $b-width solid $gray;
+  padding: 4.8px;
   cursor: pointer;
   transition: $tr background-color;
 
   img {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
   }
 
   @include hover($gray, null);

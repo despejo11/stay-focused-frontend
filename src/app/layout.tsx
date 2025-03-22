@@ -15,7 +15,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <div className='screenWidthWarning'>
-            <img src='/images/other/logoBlue.svg' alt='Logo' />
+            <img src='/images/logos/logoBlue.svg' alt='Logo' />
             <p>
               Only for devices <br />
               wider than 320px!

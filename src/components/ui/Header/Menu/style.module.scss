@@ -1,0 +1,121 @@
+@import '@/styles/index.scss';
+
+.handleToggle {
+  @include defaultButton(
+    clamp(2.375rem, 2.257rem + 0.59vw, 2.625rem),
+    clamp(2.375rem, 2.257rem + 0.59vw, 2.625rem),
+    null,
+    $darkBlue,
+    $gray
+  );
+  border-radius: 50%;
+  z-index: 101;
+
+  .closeIcon {
+    width: clamp(2rem, 1.941rem + 0.29vw, 2.125rem);
+  }
+
+  .openIcon {
+    width: clamp(1.625rem, 1.566rem + 0.29vw, 1.75rem);
+  }
+}
+
+.menu {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $lightGray;
+  color: $black;
+  overflow: auto;
+  z-index: 100;
+
+  .content {
+    margin-top: clamp(6.875rem, 6.581rem + 1.47vw, 7.5rem);
+    margin-inline: clamp(2.5rem, 1.324rem + 5.88vw, 5rem);
+
+    .pattern {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: clamp(13.125rem, 6.36rem + 33.82vw, 27.5rem);
+      z-index: -1;
+    }
+
+    .logo {
+      width: clamp(2.813rem, 2.371rem + 2.21vw, 3.75rem);
+      margin-bottom: 40px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      .link {
+        color: $black;
+        text-decoration: none;
+        font-size: clamp(1.375rem, 1.081rem + 1.47vw, 2rem);
+      }
+
+      .login {
+        margin-top: 20px;
+        @include defaultButton(
+          clamp(5.5rem, 5.206rem + 1.47vw, 6.125rem),
+          clamp(2.125rem, 2.007rem + 0.59vw, 2.375rem),
+          clamp(0.887rem, 0.846rem + 0.21vw, 0.975rem),
+          $darkBlue,
+          $gray
+        );
+      }
+    }
+
+    .socialMedia {
+      margin-top: clamp(5.625rem, 5.331rem + 1.47vw, 6.25rem);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      a {
+        width: clamp(2rem, 1.882rem + 0.59vw, 2.25rem);
+      }
+
+      span {
+        width: 2px;
+        height: 24px;
+        background-color: $gray;
+        opacity: 50%;
+      }
+    }
+
+    .reserved {
+      margin-top: 20px;
+      font-size: clamp(0.813rem, 0.724rem + 0.44vw, 1rem);
+    }
+  }
+}
+
+.darkMenu {
+  background-color: $darkBlue;
+  color: $white;
+
+  .content {
+    .links {
+      .link {
+        color: $white;
+      }
+
+      .login {
+        box-shadow: $b-shadow;
+      }
+    }
+
+    .socialMedia {
+      span {
+        opacity: 40%;
+      }
+    }
+  }
+}
