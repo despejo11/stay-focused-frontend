@@ -14,7 +14,7 @@ export default function Welcome() {
 
         <img
           className={styles.pattern}
-          src='/images/patterns/HomeHeadPattern.svg'
+          src='/images/patterns/welcome.svg'
           alt='Pattern'
         />
 

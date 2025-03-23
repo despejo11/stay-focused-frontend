@@ -1,0 +1,11 @@
+@import '@/styles/index.scss';
+
+.line {
+  margin-top: 68px;
+  margin-bottom: 68px;
+  display: block;
+  height: 2.4px;
+  width: 100%;
+  opacity: 0.5;
+  background-color: $gray;
+}
