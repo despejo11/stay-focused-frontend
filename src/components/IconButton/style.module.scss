@@ -1,0 +1,41 @@
+@import '@/styles/index.scss';
+
+.button {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+  border-radius: 8px;
+
+  @include defaultButton(
+    auto,
+    clamp(3.375rem, 3.193rem + 0.91vw, 3.875rem),
+    null,
+    $darkBlue,
+    $gray
+  );
+  @include hover($gray, null);
+
+  p {
+    margin-left: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
+    font-size: clamp(0.938rem, 0.801rem + 0.68vw, 1.313rem);
+    font-weight: 500;
+  }
+
+  span {
+    margin-left: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
+    margin-right: 5px;
+    border-radius: 5px;
+    width: clamp(2.5rem, 2.318rem + 0.91vw, 3rem);
+    height: clamp(2.5rem, 2.318rem + 0.91vw, 3rem);
+    background-color: $lightGray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: clamp(1.625rem, 1.489rem + 0.68vw, 2rem);
+      height: clamp(1.625rem, 1.489rem + 0.68vw, 2rem);
+    }
+  }
+}

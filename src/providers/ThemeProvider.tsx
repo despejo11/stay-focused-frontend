@@ -5,13 +5,13 @@ import { createContext, useEffect, ReactNode } from 'react'
 
 type ThemeContextType = [string, React.Dispatch<React.SetStateAction<string>>]
 
-interface ThemeProviderProps {
+interface IThemeProviderProps {
   children: ReactNode
 }
 
 export const ThemeContext = createContext<ThemeContextType | null>(null)
 
-export default function ThemeProvider({ children }: ThemeProviderProps) {
+export default function ThemeProvider({ children }: IThemeProviderProps) {
   const [theme, setTheme] = useLocalStorage<string>('Theme', 'light')
 
   useEffect(() => {

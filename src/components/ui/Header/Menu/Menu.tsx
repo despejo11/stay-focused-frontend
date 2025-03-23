@@ -74,7 +74,7 @@ export default function Menu() {
             <div className={styles.content}>
               <img
                 className={styles.pattern}
-                src='/images/other/menuPattern.svg'
+                src='/images/patterns/menuPattern.svg'
                 alt='Pattern'
               />
 
