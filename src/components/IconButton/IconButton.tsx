@@ -13,7 +13,7 @@ export default function IconButton({ link, text }: IIconButtonProps) {
       <p>{text}</p>
 
       <span>
-        <img src='/images/icons/buttonArrow.svg' alt='Arrow' />
+        <img src='/images/icons/arrowButton.svg' alt='Arrow' />
       </span>
     </Link>
   )

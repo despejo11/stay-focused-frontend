@@ -20,6 +20,7 @@
       width: clamp(16.25rem, 5.568rem + 53.41vw, 45.625rem);
       margin: auto;
       margin-top: clamp(0.938rem, 0.824rem + 0.57vw, 1.25rem);
+      margin-bottom: clamp(8.75rem, 3.295rem + 27.27vw, 23.75rem);
 
       span {
         font-weight: 500;
@@ -28,27 +29,15 @@
 
     .pattern {
       position: absolute;
-      top: -10px;
-      @media (max-width: 700px) {
-        top: 50px;
-        right: -10px;
+      top: 62%;
+
+      @media (max-width: 500px) {
+        top: 60%;
       }
-
-      right: 30px;
-      width: clamp(10rem, 4.545rem + 27.27vw, 25rem);
-      height: clamp(10rem, 4.545rem + 27.27vw, 25rem);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(17.5rem, -1.136rem + 93.18vw, 68.75rem);
       z-index: -1;
-    }
-
-    .card {
-      width: clamp(16.25rem, -0.568rem + 84.09vw, 62.5rem);
-      height: clamp(8.75rem, 7.841rem + 4.55vw, 11.25rem);
-      background-color: $blue;
-      border-radius: 20px;
-      margin: auto;
-      margin-top: clamp(4.125rem, 3.807rem + 1.59vw, 5rem);
-      margin-bottom: 80px;
-      box-shadow: $b-shadow;
     }
   }
 }

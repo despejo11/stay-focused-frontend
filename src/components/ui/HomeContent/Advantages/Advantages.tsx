@@ -105,8 +105,7 @@ export default function Advantages() {
             </div>
             <p className={styles.description}>
               Efficiency is about focus, not hours spent. Use proven techniques
-              like Pomodoro, Deep Work, or Flow to maximize output without
-              burnout.
+              like Pomodoro or Deep Work to maximize output without burnout.
             </p>
           </div>
         </div>

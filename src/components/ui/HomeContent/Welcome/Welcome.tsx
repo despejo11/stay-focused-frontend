@@ -18,8 +18,6 @@ export default function Welcome() {
           alt='Pattern'
         />
 
-        <div className={styles.card}></div>
-
         <IconButton link='home' text='Get Started' />
       </div>
     </div>
