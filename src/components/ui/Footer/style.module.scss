@@ -1,0 +1,215 @@
+@import '@/styles/index.scss';
+
+.background {
+  margin-top: 180px;
+  border-top: 2.3px solid #6d6d707d;
+  background-image: url('/images/other/lightFooter.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding-top: clamp(2.625rem, 2.489rem + 0.68vw, 3rem);
+    gap: clamp(4.375rem, 3.92rem + 2.27vw, 5.625rem);
+
+    .topFlex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(3rem, 2.273rem + 3.64vw, 5rem);
+      justify-content: space-between;
+      align-items: start;
+
+      @media (max-width: 1000px) {
+        justify-content: center;
+      }
+
+      @media (max-width: 450px) {
+        justify-content: flex-start;
+      }
+
+      .logo {
+        width: clamp(2.625rem, 2.507rem + 0.59vw, 2.875rem);
+      }
+
+      .flexLinks {
+        display: flex;
+        gap: 114px;
+
+        @media (max-width: 1000px) {
+          gap: clamp(4.625rem, 4.449rem + 0.88vw, 5rem);
+        }
+
+        .links {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .title {
+            font-weight: 500;
+            font-size: clamp(1.188rem, 1.097rem + 0.45vw, 1.438rem);
+            margin-bottom: 6px;
+          }
+
+          a {
+            font-size: clamp(0.906rem, 0.849rem + 0.28vw, 1.063rem);
+            text-decoration: none;
+            color: $black;
+            transition: $tr color;
+            @include hover(null, $gray);
+          }
+        }
+      }
+
+      .line {
+        height: 1.6px;
+        width: 70%;
+        opacity: 0.5;
+        background-color: $gray;
+        display: none;
+
+        @media (max-width: 1000px) {
+          display: block;
+        }
+      }
+
+      .email {
+        width: 260px;
+
+        p {
+          font-size: clamp(0.906rem, 0.849rem + 0.28vw, 1.063rem);
+          margin-bottom: 16px;
+        }
+
+        a {
+          text-decoration: none;
+          color: $black;
+          font-weight: 500;
+          font-size: clamp(1.188rem, 1.097rem + 0.45vw, 1.438rem);
+          transition: $tr color;
+          @include hover(null, $gray);
+        }
+      }
+    }
+
+    .bottomFlex {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 26px;
+
+      @media (max-width: 650px) {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        .reserved {
+          font-size: clamp(0.75rem, 0.705rem + 0.23vw, 0.875rem);
+        }
+
+        .socialMedia {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+
+          @media (max-width: 650px) {
+            justify-content: center;
+          }
+
+          a {
+            width: clamp(2rem, 1.882rem + 0.59vw, 2.25rem);
+          }
+
+          span {
+            width: 2px;
+            height: 24px;
+            background-color: $gray;
+            opacity: 50%;
+          }
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @media (max-width: 650px) {
+          justify-content: center;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .developers {
+          p {
+            font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+          }
+
+          div {
+            margin-top: 8px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+
+            @media (max-width: 650px) {
+              justify-content: center;
+            }
+
+            a {
+              color: $black;
+              font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+              font-weight: 500;
+              transition: $tr color;
+              @include hover(null, $gray);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.darkBackground {
+  background-image: url('/images/other/darkFooter.svg');
+
+  .content {
+    .topFlex {
+      .flexLinks {
+        .links {
+          a {
+            color: $white;
+            @include hover(null, $lightGray);
+          }
+        }
+      }
+
+      .email {
+        a {
+          color: $white;
+          @include hover(null, $lightGray);
+        }
+      }
+    }
+
+    .bottomFlex {
+      .right {
+        .developers {
+          div {
+            a {
+              color: $white;
+              @include hover(null, $lightGray);
+            }
+          }
+        }
+      }
+    }
+  }
+}
