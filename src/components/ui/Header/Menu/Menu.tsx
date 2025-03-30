@@ -3,6 +3,7 @@
 import styles from './style.module.scss'
 import useThemeClass from '@/hooks/useThemeClass'
 import { PagesConfig } from '@/config/pages.config'
+import { LinksConfig } from '@/config/links.config'
 import { ThemeContext } from '@/providers/ThemeProvider'
 import { fadeInOutVariants } from '@/config/animations.config'
 import { useState, useEffect, useContext } from 'react'
@@ -104,14 +105,14 @@ export default function Menu() {
               </div>
 
               <div className={styles.socialMedia}>
-                <a href='https://discord.gg/VPKJBR5bTT' target='_blank'>
+                <a href={LinksConfig.discord} target='_blank'>
                   <img src='/images/socialMedia/discord.svg' alt='Discord' />
                 </a>
 
                 <span />
 
-                <a href='mailto:info@stayfocused.one' target='_blank'>
-                  <img src='/images/socialMedia/mail.svg' alt='Mail' />
+                <a href={LinksConfig.email} target='_blank'>
+                  <img src='/images/socialMedia/mail.svg' alt='Email' />
                 </a>
               </div>
 

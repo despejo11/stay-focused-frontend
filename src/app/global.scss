@@ -16,8 +16,8 @@ body {
   }
 
   .container {
-    max-width: 1200px;
-    padding-inline: 15px;
+    max-width: 1600px;
+    padding-inline: clamp(0.938rem, 0.824rem + 0.57vw, 1.25rem);
     margin: auto;
   }
 
