@@ -6,6 +6,11 @@ body {
   background-color: $white;
   color: $black;
 
+  ::selection {
+    color: $white;
+    background-color: #5272ffc1;
+  }
+
   img {
     display: block;
     width: 100%;
@@ -24,6 +29,11 @@ body {
   &.dark {
     background-color: $black;
     color: $white;
+
+    ::selection {
+      color: $black;
+      background-color: #5272ffc1;
+    }
   }
 
   .screenWidthWarning {

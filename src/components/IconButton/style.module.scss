@@ -4,15 +4,15 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
-  border: 2px solid;
   border-radius: 8px;
+  position: relative;
 
   @include defaultButton(
     auto,
     clamp(3.375rem, 3.193rem + 0.91vw, 3.875rem),
     null,
     $darkBlue,
-    $gray
+    null
   );
   @include hover($gray, null);
 
@@ -37,5 +37,49 @@
       width: clamp(1.625rem, 1.489rem + 0.68vw, 2rem);
       height: clamp(1.625rem, 1.489rem + 0.68vw, 2rem);
     }
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.border::after,
+.border::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 2px;
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 18%,
+    $blue,
+    $lightBlue,
+    #5272ffbc,
+    #5272ff67,
+    #5272ff00
+  );
+  border-radius: 10px;
+  animation: 2.5s spin linear infinite;
+}
+
+.border::before {
+  filter: blur(12px);
+  opacity: 0.4;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
   }
 }

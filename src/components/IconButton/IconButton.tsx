@@ -8,8 +8,18 @@ interface IIconButtonProps {
 }
 
 export default function IconButton({ link, text }: IIconButtonProps) {
+  const isGetStarted = text === 'Get Started'
+
+  const buttonClass = isGetStarted
+    ? `${styles.button} ${styles.border}`
+    : styles.button
+
+  const linkStyle = {
+    border: isGetStarted ? '0px' : '2px solid #6d6d70',
+  }
+
   return (
-    <Link href={PagesConfig[link]} className={styles.button}>
+    <Link href={PagesConfig[link]} className={buttonClass} style={linkStyle}>
       <p>{text}</p>
 
       <span>
