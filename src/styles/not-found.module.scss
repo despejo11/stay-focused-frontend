@@ -1,0 +1,16 @@
+@import './index.scss';
+
+.content {
+  margin-top: $m-top;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .error {
+    font-size: clamp(4.5rem, 4.136rem + 1.82vw, 5.5rem);
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: clamp(1rem, 0.864rem + 0.68vw, 1.375rem);
+  }
+}
