@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import styles from '@/styles/not-found.module.scss'
-import DecryptedText from '@/components/DecryptedText/DecryptedText'
+import DecryptedText from '@/components/utils/DecryptedText'
 import IconButton from '@/components/IconButton/IconButton'
 import Footer from '@/components/ui/Footer/Footer'
 

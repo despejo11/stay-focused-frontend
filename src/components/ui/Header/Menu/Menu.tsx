@@ -6,9 +6,9 @@ import { PagesConfig } from '@/config/pages.config'
 import { LinksConfig } from '@/config/links.config'
 import { ThemeContext } from '@/providers/ThemeProvider'
 import { fadeInOutVariants } from '@/config/animations.config'
+import { TransitionLink } from '@/components/utils/TransitionLink'
 import { useState, useEffect, useContext } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Link from 'next/link'
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,6 +24,10 @@ export default function Menu() {
 
   const handleToggle = () => {
     setIsOpen((prevState) => !prevState)
+  }
+
+  const handleLinkClick = () => {
+    setIsOpen(false)
   }
 
   useEffect(() => {
@@ -79,29 +83,47 @@ export default function Menu() {
                 alt='Pattern'
               />
 
-              <img
-                className={styles.logo}
-                src={
-                  theme === 'dark'
-                    ? '/images/logos/logoWhite.svg'
-                    : '/images/logos/logoBlack.svg'
-                }
-                alt='Logo'
-              />
+              <TransitionLink href={PagesConfig.home} onClick={handleLinkClick}>
+                <img
+                  src={
+                    theme === 'dark'
+                      ? '/images/logos/logoWhite.svg'
+                      : '/images/logos/logoBlack.svg'
+                  }
+                  className={styles.logo}
+                  alt='Logo'
+                />
+              </TransitionLink>
 
               <div className={styles.links}>
-                <Link className={styles.link} href={PagesConfig.home}>
+                <TransitionLink
+                  className={styles.link}
+                  href={PagesConfig.home}
+                  onClick={handleLinkClick}
+                >
                   Home
-                </Link>
-                <Link className={styles.link} href={PagesConfig.home}>
+                </TransitionLink>
+                <TransitionLink
+                  className={styles.link}
+                  href={PagesConfig.about}
+                  onClick={handleLinkClick}
+                >
                   About
-                </Link>
-                <Link className={styles.link} href={PagesConfig.home}>
+                </TransitionLink>
+                <TransitionLink
+                  className={styles.link}
+                  href={PagesConfig.home}
+                  onClick={handleLinkClick}
+                >
                   Methodologies
-                </Link>
-                <Link href={PagesConfig.home} className={styles.login}>
+                </TransitionLink>
+                <TransitionLink
+                  className={styles.login}
+                  href={PagesConfig.home}
+                  onClick={handleLinkClick}
+                >
                   Log in
-                </Link>
+                </TransitionLink>
               </div>
 
               <div className={styles.socialMedia}>

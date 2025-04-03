@@ -6,8 +6,8 @@ import useThemeClass from '@/hooks/useThemeClass'
 import { PagesConfig } from '@/config/pages.config'
 import { LinksConfig } from '@/config/links.config'
 import { ThemeContext } from '@/providers/ThemeProvider'
+import { TransitionLink } from '@/components/utils/TransitionLink'
 import { useContext } from 'react'
-import Link from 'next/link'
 
 export default function Footer() {
   const context = useContext(ThemeContext)
@@ -23,7 +23,7 @@ export default function Footer() {
       <div className='container'>
         <div className={styles.content}>
           <div className={styles.topFlex}>
-            <Link href={PagesConfig.home} className={styles.logo}>
+            <TransitionLink href={PagesConfig.home} className={styles.logo}>
               <img
                 src={
                   theme === 'dark'
@@ -32,20 +32,24 @@ export default function Footer() {
                 }
                 alt='Logo'
               />
-            </Link>
+            </TransitionLink>
 
             <div className={styles.flexLinks}>
               <div className={styles.links}>
                 <p className={styles.title}>Navigation</p>
-                <Link href={PagesConfig.home}>Home</Link>
-                <Link href={PagesConfig.home}>Methodologies</Link>
-                <Link href={PagesConfig.home}>About</Link>
+                <TransitionLink href={PagesConfig.home}>Home</TransitionLink>
+                <TransitionLink href={PagesConfig.home}>
+                  Methodologies
+                </TransitionLink>
+                <TransitionLink href={PagesConfig.about}>About</TransitionLink>
               </div>
 
               <div className={styles.links}>
                 <p className={styles.title}>More</p>
-                <Link href={PagesConfig.home}>Privacy Policy</Link>
-                <Link href={PagesConfig.home}>FAQ</Link>
+                <TransitionLink href={PagesConfig.home}>
+                  Privacy Policy
+                </TransitionLink>
+                <TransitionLink href={PagesConfig.home}>FAQ</TransitionLink>
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 import styles from './style.module.scss'
 import { PagesConfig } from '@/config/pages.config'
-import Link from 'next/link'
+import { TransitionLink } from '../utils/TransitionLink'
 
 interface IIconButtonProps {
   link: string
@@ -19,7 +19,11 @@ export default function IconButton({ link, text }: IIconButtonProps) {
   }
 
   return (
-    <Link href={PagesConfig[link]} className={buttonClass} style={linkStyle}>
+    <TransitionLink
+      href={PagesConfig[link]}
+      className={buttonClass}
+      style={linkStyle}
+    >
       <p>{text}</p>
 
       <span>
@@ -32,6 +36,6 @@ export default function IconButton({ link, text }: IIconButtonProps) {
           alt='Icon'
         />
       </span>
-    </Link>
+    </TransitionLink>
   )
 }

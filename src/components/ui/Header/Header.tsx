@@ -5,7 +5,7 @@ import ThemeToggle from '@/components/ThemeToggle/ThemeToggle'
 import useThemeClass from '@/hooks/useThemeClass'
 import Menu from './Menu/Menu'
 import { PagesConfig } from '@/config/pages.config'
-import Link from 'next/link'
+import { TransitionLink } from '@/components/utils/TransitionLink'
 
 export default function Header() {
   return (
@@ -13,14 +13,16 @@ export default function Header() {
       <div className='container'>
         <div className={useThemeClass(styles.desktop, styles.darkDesktop)}>
           <div className={styles.links}>
-            <Link href={PagesConfig.home} className={styles.logo}>
+            <TransitionLink href={PagesConfig.home} className={styles.logo}>
               <img src='/images/logos/logoBlue.svg' alt='Logo' />
-            </Link>
+            </TransitionLink>
 
             <div>
-              <Link href={PagesConfig.home}>Home</Link>
-              <Link href={PagesConfig.home}>About</Link>
-              <Link href={PagesConfig.home}>Methodologies</Link>
+              <TransitionLink href={PagesConfig.home}>Home</TransitionLink>
+              <TransitionLink href={PagesConfig.about}>About</TransitionLink>
+              <TransitionLink href={PagesConfig.home}>
+                Methodologies
+              </TransitionLink>
             </div>
           </div>
 
@@ -29,9 +31,9 @@ export default function Header() {
 
             <span />
 
-            <Link href={PagesConfig.home} className={styles.login}>
+            <TransitionLink href={PagesConfig.home} className={styles.login}>
               Log in
-            </Link>
+            </TransitionLink>
 
             <div className={styles.menu}>
               <Menu />

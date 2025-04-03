@@ -5,6 +5,9 @@ body {
   font-family: 'Outfit', sans-serif;
   background-color: $white;
   color: $black;
+  transition-property: opacity, filter;
+  transition-timing-function: ease-in-out;
+  transition-duration: 333ms;
 
   ::selection {
     color: $white;
@@ -66,6 +69,11 @@ body {
       display: none;
     }
   }
+}
+
+.pageTransition {
+  opacity: 0;
+  filter: blur(12px);
 }
 
 * {
