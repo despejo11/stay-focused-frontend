@@ -1,0 +1,145 @@
+@import '@/styles/index.scss';
+
+.content {
+  margin-top: $m-top;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  position: relative;
+
+  .progress {
+    position: absolute;
+    top: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+    left: clamp(0.412rem, 0.335rem + 0.39vw, 0.625rem);
+  }
+
+  .card {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1.125rem, 0.67rem + 2.27vw, 2.375rem);
+
+    img {
+      user-select: none;
+      margin-top: clamp(0.5rem, 0.136rem + 1.82vw, 1.5rem);
+      width: clamp(1.125rem, 0.852rem + 1.36vw, 1.875rem);
+    }
+
+    .text {
+      text-wrap: balance;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.125rem, 0.943rem + 0.91vw, 1.625rem);
+
+      .title {
+        font-size: clamp(1.438rem, 0.642rem + 3.98vw, 3.625rem);
+        font-weight: 500;
+      }
+
+      .description {
+        font-size: clamp(0.938rem, 0.824rem + 0.57vw, 1.25rem);
+
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .cardAlt {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1.125rem, 0.67rem + 2.27vw, 2.375rem);
+
+    img {
+      user-select: none;
+      margin-top: clamp(0.5rem, 0.136rem + 1.82vw, 1.5rem);
+      width: clamp(1.125rem, 0.852rem + 1.36vw, 1.875rem);
+    }
+
+    .text {
+      text-wrap: balance;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+
+      .title {
+        font-size: clamp(1.438rem, 0.642rem + 3.98vw, 3.625rem);
+        font-weight: 500;
+      }
+
+      .subtitle {
+        font-size: clamp(0.938rem, 0.824rem + 0.57vw, 1.25rem);
+
+        span {
+          font-weight: 500;
+        }
+      }
+
+      .description {
+        margin-block: clamp(0.625rem, 0.398rem + 1.14vw, 1.25rem);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.125rem, 1.034rem + 0.45vw, 1.375rem);
+
+        p {
+          font-size: clamp(1rem, 0.864rem + 0.68vw, 1.375rem);
+
+          span {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  .title {
+    font-size: clamp(1.438rem, 0.642rem + 3.98vw, 3.625rem);
+    font-weight: 500;
+  }
+
+  .discord {
+    margin-top: 14px;
+    font-size: clamp(0.938rem, 0.801rem + 0.68vw, 1.313rem);
+    font-weight: 500;
+
+    a {
+      text-decoration: underline;
+      color: $black;
+      transition: $tr color;
+      @include hover(null, $gray);
+    }
+  }
+
+  .email {
+    line-height: clamp(1.375rem, 1.102rem + 1.36vw, 2.125rem);
+    margin-top: 28px;
+    font-size: clamp(0.938rem, 0.801rem + 0.68vw, 1.313rem);
+    font-weight: 500;
+
+    a {
+      font-size: clamp(1.375rem, 1.239rem + 0.68vw, 1.75rem);
+      text-decoration: underline;
+      color: $black;
+      transition: $tr color;
+      @include hover(null, $gray);
+    }
+  }
+}
+
+.darkContact {
+  .discord {
+    a {
+      color: $white;
+      @include hover(null, $lightGray);
+    }
+  }
+
+  .email {
+    a {
+      color: $white;
+      @include hover(null, $lightGray);
+    }
+  }
+}
