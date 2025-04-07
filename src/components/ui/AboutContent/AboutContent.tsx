@@ -115,23 +115,23 @@ export default function AboutContent() {
 
             <div className={styles.description}>
               <p>
-                — <span>Metrics & Statistics:</span> Track your progress and
+                <span>— Metrics & Statistics:</span> Track your progress and
                 gain insights into your productivity.
               </p>
 
               <p>
-                — <span>Gamification:</span> Make productivity more engaging and
+                <span>— Gamification:</span> Make productivity more engaging and
                 rewarding. <span>Personalized Characters</span>, customize your
                 animated assistant for a more enjoyable experience.
               </p>
 
               <p>
-                — <span>Timer Design Customization:</span> Adjust the look and
+                <span>— Timer Design Customization:</span> Adjust the look and
                 feel of your timer to match your preferences.
               </p>
 
               <p>
-                — <span>Expanded Sound Library:</span> A broader collection of
+                <span>— Expanded Sound Library:</span> A broader collection of
                 sounds to enhance your focus.
               </p>
             </div>

@@ -1,0 +1,123 @@
+@import '@/styles/index.scss';
+
+.content {
+  margin-top: $m-top;
+
+  .head {
+    text-wrap: balance;
+
+    .title {
+      font-size: clamp(1.875rem, 0.966rem + 4.55vw, 4.375rem);
+      font-weight: 500;
+    }
+
+    .date {
+      margin-top: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+      font-size: clamp(1.125rem, 1.011rem + 0.57vw, 1.438rem);
+
+      span {
+        font-size: clamp(1.25rem, 1rem + 1.25vw, 1.938rem);
+        font-weight: 500;
+        margin-left: clamp(0.225rem, 0.193rem + 0.16vw, 0.313rem);
+      }
+    }
+
+    .description {
+      margin-top: clamp(2.125rem, 1.989rem + 0.68vw, 2.5rem);
+      line-height: clamp(1.5rem, 1.364rem + 0.68vw, 1.875rem);
+      font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3.438rem, 3.097rem + 1.7vw, 4.375rem);
+
+    .textContainer {
+      text-wrap: balance;
+
+      .title {
+        font-size: clamp(1.5rem, 1.227rem + 1.36vw, 2.25rem);
+        font-weight: 500;
+      }
+
+      .description {
+        margin-top: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+        font-size: clamp(0.938rem, 0.847rem + 0.45vw, 1.188rem);
+        line-height: clamp(1.438rem, 1.301rem + 0.68vw, 1.813rem);
+
+        span {
+          font-weight: 500;
+        }
+
+        a {
+          font-weight: 500;
+          color: $black;
+          transition: $tr color;
+          @include hover(null, $gray);
+        }
+      }
+
+      .contactDescription {
+        margin-bottom: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+        margin-top: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+        font-size: clamp(0.938rem, 0.847rem + 0.45vw, 1.188rem);
+        line-height: clamp(1.438rem, 1.301rem + 0.68vw, 1.813rem);
+      }
+
+      .email {
+        font-weight: 500;
+        font-size: clamp(1.375rem, 1.011rem + 1.82vw, 2.375rem);
+        color: $black;
+        transition: $tr color;
+        @include hover(null, $gray);
+      }
+
+      .subList {
+        margin-left: clamp(1.25rem, 0.568rem + 3.41vw, 3.125rem);
+
+        .subtextContainer {
+          margin-top: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
+
+          .subtitle {
+            font-size: clamp(1.313rem, 1.131rem + 0.91vw, 1.813rem);
+            font-weight: 500;
+          }
+
+          .subDescription {
+            margin-top: clamp(0.688rem, 0.642rem + 0.23vw, 0.813rem);
+            line-height: clamp(1.375rem, 1.261rem + 0.57vw, 1.688rem);
+            font-size: clamp(0.875rem, 0.807rem + 0.34vw, 1.063rem);
+
+            span {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .darkList {
+    .textContainer {
+      .description {
+        a {
+          color: $white;
+
+          @include hover(null, $lightGray);
+        }
+      }
+
+      .email {
+        color: $white;
+
+        @include hover(null, $lightGray);
+      }
+    }
+  }
+}
