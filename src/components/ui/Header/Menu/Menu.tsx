@@ -119,7 +119,7 @@ export default function Menu() {
                 </TransitionLink>
                 <TransitionLink
                   className={styles.login}
-                  href={PagesConfig.home}
+                  href={PagesConfig.login}
                   onClick={handleLinkClick}
                 >
                   Log in

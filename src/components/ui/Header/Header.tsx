@@ -31,7 +31,7 @@ export default function Header() {
 
             <span />
 
-            <TransitionLink href={PagesConfig.home} className={styles.login}>
+            <TransitionLink href={PagesConfig.login} className={styles.login}>
               Log in
             </TransitionLink>
 

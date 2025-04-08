@@ -1,0 +1,82 @@
+@import '@/styles/index.scss';
+
+.content {
+  display: flex;
+  gap: 40px;
+
+  .formContainer {
+    width: calc(50% - 20px);
+
+    .head {
+      margin-top: clamp(0.938rem, 0.824rem + 0.57vw, 1.25rem);
+      display: flex;
+      flex-direction: column;
+
+      .logo {
+        width: 58px;
+      }
+
+      .title {
+        margin-top: 25px;
+        font-size: 36px;
+        font-weight: 500;
+      }
+
+      .description {
+        margin-top: 13px;
+        font-size: 20px;
+      }
+    }
+
+    .form {
+    }
+
+    .end {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      p {
+        font-size: 15px;
+        font-weight: 300;
+        color: $gray;
+        opacity: 0.8;
+      }
+    }
+
+    .endDark {
+      p {
+        color: $lightGray;
+      }
+    }
+  }
+
+  .banner {
+    background-color: $blue;
+    height: 1000px;
+    width: calc(50% - 20px);
+    padding-top: 120px;
+    padding-inline: 60px;
+    margin-block: clamp(0.938rem, 0.824rem + 0.57vw, 1.25rem);
+    border-radius: 24px;
+
+    ::selection {
+      color: $black;
+      background-color: #ffffffcc;
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: 500;
+      color: $white;
+    }
+
+    .description {
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 300;
+      color: $white;
+    }
+  }
+}
