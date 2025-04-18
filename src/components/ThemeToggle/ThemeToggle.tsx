@@ -1,15 +1,22 @@
 'use client'
 
 import styles from './style.module.scss'
+import useTheme from '@/hooks/useTheme'
 import { ThemeContext } from '../../providers/ThemeProvider'
 import { useContext } from 'react'
 
-type ThemeContextType = [string, React.Dispatch<React.SetStateAction<string>>]
+type TThemeContextType = [
+  'light' | 'dark',
+  React.Dispatch<React.SetStateAction<'light' | 'dark'>>
+]
 
 export default function ThemeToggle() {
-  const context = useContext(ThemeContext)
+  const [theme, setTheme] = useContext(ThemeContext) as TThemeContextType
 
-  const [theme, setTheme] = context as ThemeContextType
+  const toggleIcon = useTheme<string>(
+    '/images/icons/dark.svg',
+    '/images/icons/light.svg'
+  )
 
   const changeTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
@@ -17,11 +24,7 @@ export default function ThemeToggle() {
 
   return (
     <button className={styles.toggle} onClick={changeTheme}>
-      {theme === 'light' ? (
-        <img src='/images/icons/dark.svg' alt='Dark' />
-      ) : (
-        <img src='/images/icons/light.svg' alt='Light' />
-      )}
+      <img src={toggleIcon} alt={theme === 'light' ? 'Dark' : 'Light'} />
     </button>
   )
 }

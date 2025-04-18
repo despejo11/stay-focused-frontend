@@ -2,25 +2,22 @@
 
 import styles from './style.module.scss'
 import useThemeClass from '@/hooks/useThemeClass'
+import useTheme from '@/hooks/useTheme'
 import { PagesConfig } from '@/config/pages.config'
 import { LinksConfig } from '@/config/links.config'
-import { ThemeContext } from '@/providers/ThemeProvider'
 import { fadeInOutVariants } from '@/config/animations.config'
 import { TransitionLink } from '@/components/utils/TransitionLink'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false)
 
   const themeClass = useThemeClass(styles.menu, styles.darkMenu)
-  const context = useContext(ThemeContext)
-
-  if (!context) {
-    return null
-  }
-
-  const [theme] = context
+  const logoSrc = useTheme<string>(
+    '/images/logos/logoBlack.svg',
+    '/images/logos/logoWhite.svg'
+  )
 
   const handleToggle = () => {
     setIsOpen((prevState) => !prevState)
@@ -84,15 +81,7 @@ export default function Menu() {
               />
 
               <TransitionLink href={PagesConfig.home} onClick={handleLinkClick}>
-                <img
-                  src={
-                    theme === 'dark'
-                      ? '/images/logos/logoWhite.svg'
-                      : '/images/logos/logoBlack.svg'
-                  }
-                  className={styles.logo}
-                  alt='Logo'
-                />
+                <img src={logoSrc} className={styles.logo} alt='Logo' />
               </TransitionLink>
 
               <div className={styles.links}>

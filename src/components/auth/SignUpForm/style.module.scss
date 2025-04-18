@@ -1,0 +1,185 @@
+@import '@/styles/index.scss';
+
+.content {
+  .buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1200px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
+    }
+  }
+
+  .line {
+    margin-block: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    span {
+      height: 1px;
+      background-color: $lightGray;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    p {
+      font-size: clamp(1rem, 0.955rem + 0.23vw, 1.125rem);
+      color: $gray;
+    }
+  }
+
+  .darkLine {
+    span {
+      opacity: 0.6;
+    }
+
+    p {
+      color: $lightGray;
+    }
+  }
+
+  .form {
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .passwordContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .input {
+        position: relative;
+
+        .title {
+          font-size: clamp(1.188rem, 1.142rem + 0.23vw, 1.313rem);
+          margin-bottom: 8px;
+        }
+
+        input {
+          width: 100%;
+          @include input(18px, 10px 15px);
+        }
+
+        .error {
+          margin-top: 7px;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          position: absolute;
+
+          img {
+            width: 16px;
+          }
+
+          p {
+            font-size: 12px;
+            color: $red;
+          }
+        }
+      }
+    }
+
+    .privacyAgree {
+      margin-top: 36px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .label {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+
+        img {
+          position: absolute;
+          width: 14px;
+          bottom: -14px;
+          left: 1.6px;
+        }
+
+        label {
+          cursor: pointer;
+
+          input {
+            display: none;
+          }
+
+          input:checked ~ svg path {
+            stroke-dasharray: 70.5096664428711 9999999;
+            stroke-dashoffset: -262.2723388671875;
+          }
+
+          svg {
+            overflow: visible;
+
+            path {
+              fill: none;
+              stroke-width: 6;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              transition: stroke $tr ease, stroke-dasharray 0.5s ease,
+                stroke-dashoffset 0.5s ease;
+              stroke-dasharray: 241 9999999;
+              stroke-dashoffset: 0;
+            }
+          }
+        }
+      }
+
+      .privacy {
+        margin-bottom: 4px;
+        font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+
+        a {
+          cursor: pointer;
+          color: $black;
+          transition: color $tr;
+          @include hover(null, $gray);
+        }
+      }
+
+      .darkPrivacy {
+        a {
+          color: $white;
+          @include hover(null, $lightGray);
+        }
+      }
+    }
+
+    .submit {
+      margin-top: 45px;
+      width: 100%;
+      background-color: $blue;
+      cursor: pointer;
+      color: $white;
+      border-radius: 10px;
+      font-size: clamp(1.094rem, 1.06rem + 0.17vw, 1.188rem);
+      padding-block: 12px;
+      transition: background-color $tr;
+      @include hover($lightBlue, null);
+    }
+
+    .loginLink {
+      font-weight: 300;
+      margin-top: 30px;
+      font-size: clamp(0.813rem, 0.767rem + 0.23vw, 0.938rem);
+
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        color: $blue;
+        transition: color $tr;
+        @include hover(null, $lightBlue);
+      }
+    }
+  }
+}

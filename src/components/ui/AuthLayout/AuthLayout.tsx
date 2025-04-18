@@ -30,7 +30,7 @@ export default function AuthLayout({
             <p className={styles.description}>{description}</p>
           </div>
 
-          <div className={styles.form}>{children}</div>
+          <div>{children}</div>
 
           <div className={useThemeClass(styles.end, styles.endDark)}>
             <ThemeToggle />

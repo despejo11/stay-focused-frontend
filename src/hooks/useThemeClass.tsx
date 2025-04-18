@@ -1,16 +1,9 @@
-import { useContext } from 'react'
-import { ThemeContext } from '@/providers/ThemeProvider'
+import useTheme from './useTheme'
 
-const useThemeClass = (lightClass: string, darkClass: string): string => {
-  const context = useContext(ThemeContext)
+function useThemeClass(lightClass: string, darkClass: string): string {
+  const themeClass = useTheme<string>('', darkClass)
 
-  if (!context) {
-    return lightClass
-  }
-
-  const [theme] = context
-
-  return `${lightClass} ${theme === 'dark' ? darkClass : ''}`
+  return `${lightClass} ${themeClass}`.trim()
 }
 
 export default useThemeClass

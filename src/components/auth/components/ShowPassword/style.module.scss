@@ -1,0 +1,12 @@
+@import '@/styles/index.scss';
+
+.button {
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: clamp(2.813rem, 2.744rem + 0.34vw, 3rem);
+  cursor: pointer;
+  user-select: none;
+  width: 20px;
+  height: 20px;
+}
