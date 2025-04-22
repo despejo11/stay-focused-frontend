@@ -60,7 +60,7 @@ export default function AboutContent() {
         </svg>
 
         <div className={styles.card}>
-          <img src='/images/other/ellipse.svg' alt='Ellipse' />
+          <img src='/images/other/Ellipse.svg' alt='Ellipse' />
 
           <div className={styles.text}>
             <p className={styles.title}>About Stay Focused</p>
@@ -75,7 +75,7 @@ export default function AboutContent() {
         </div>
 
         <div className={styles.card}>
-          <img src='/images/other/ellipse.svg' alt='Ellipse' />
+          <img src='/images/other/Ellipse.svg' alt='Ellipse' />
 
           <div className={styles.text}>
             <p className={styles.title}>Our Mission</p>
@@ -90,7 +90,7 @@ export default function AboutContent() {
         </div>
 
         <div className={styles.card}>
-          <img src='/images/other/ellipse.svg' alt='Ellipse' />
+          <img src='/images/other/Ellipse.svg' alt='Ellipse' />
 
           <div className={styles.text}>
             <p className={styles.title}>Why It Matters</p>
@@ -104,7 +104,7 @@ export default function AboutContent() {
         </div>
 
         <div className={styles.cardAlt}>
-          <img src='/images/other/ellipse.svg' alt='Ellipse' />
+          <img src='/images/other/Ellipse.svg' alt='Ellipse' />
 
           <div className={styles.text}>
             <p className={styles.title}>What's Next?</p>

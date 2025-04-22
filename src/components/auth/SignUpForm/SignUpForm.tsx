@@ -4,6 +4,7 @@ import styles from './style.module.scss'
 import useTheme from '@/hooks/useTheme'
 import useThemeClass from '@/hooks/useThemeClass'
 import ShowPassword from '../components/ShowPassword/ShowPassword'
+import OrLine from '../components/OrLine/OrLine'
 import AuthProviderButton from '../components/AuthProviderButton/AuthProviderButton'
 import {
   getErrorMessage,
@@ -48,11 +49,7 @@ export default function SignUpForm() {
         <AuthProviderButton icon='GitHub' text='Sign up with GitHub' />
       </div>
 
-      <div className={useThemeClass(styles.line, styles.darkLine)}>
-        <span />
-        <p>or</p>
-        <span />
-      </div>
+      <OrLine />
 
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <div className={styles.inputs}>
@@ -109,7 +106,7 @@ export default function SignUpForm() {
           </div>
 
           <div className={styles.input}>
-            <p className={styles.title}>Email</p>
+            <p className={styles.title}>Email address</p>
             <motion.input
               {...register('email', {
                 required: 'Required',

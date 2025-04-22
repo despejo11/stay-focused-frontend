@@ -2,6 +2,7 @@
 
 .button {
   display: flex;
+  color: $black;
   gap: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
   justify-content: center;
   align-items: center;
@@ -24,6 +25,7 @@
 }
 
 .darkButton {
+  color: $white;
   background-color: $darkBlue;
   border: 1.6px solid $gray;
   @include hover($gray, null);

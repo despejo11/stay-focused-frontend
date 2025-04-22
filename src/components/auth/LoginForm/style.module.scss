@@ -19,14 +19,23 @@
       flex-direction: column;
       gap: 30px;
 
-      .passwordContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 28px;
-      }
-
       .input {
         position: relative;
+
+        .titleContainer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .forgotButton {
+            font-size: clamp(0.813rem, 0.79rem + 0.11vw, 0.875rem);
+            background-color: transparent;
+            cursor: pointer;
+            color: $blue;
+            transition: color $tr;
+            @include hover(null, $lightBlue);
+          }
+        }
 
         .title {
           font-size: clamp(1.188rem, 1.142rem + 0.23vw, 1.313rem);
@@ -57,74 +66,6 @@
       }
     }
 
-    .privacyAgree {
-      margin-top: 42px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .label {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        position: relative;
-
-        img {
-          position: absolute;
-          width: 14px;
-          bottom: -14px;
-          left: 1.6px;
-        }
-
-        label {
-          cursor: pointer;
-
-          input {
-            display: none;
-          }
-
-          input:checked ~ svg path {
-            stroke-dasharray: 70.5096664428711 9999999;
-            stroke-dashoffset: -262.2723388671875;
-          }
-
-          svg {
-            overflow: visible;
-
-            path {
-              fill: none;
-              stroke-width: 6;
-              stroke-linecap: round;
-              stroke-linejoin: round;
-              transition: stroke $tr ease, stroke-dasharray 0.5s ease,
-                stroke-dashoffset 0.5s ease;
-              stroke-dasharray: 241 9999999;
-              stroke-dashoffset: 0;
-            }
-          }
-        }
-      }
-
-      .privacy {
-        margin-bottom: 4px;
-        font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
-
-        a {
-          cursor: pointer;
-          color: $black;
-          transition: color $tr;
-          @include hover(null, $gray);
-        }
-      }
-
-      .darkPrivacy {
-        a {
-          color: $white;
-          @include hover(null, $lightGray);
-        }
-      }
-    }
-
     .submit {
       margin-top: 45px;
       width: 100%;
@@ -139,7 +80,7 @@
       @include hover($lightBlue, null);
     }
 
-    .loginLink {
+    .SignUpLink {
       font-weight: 300;
       margin-top: 30px;
       font-size: clamp(0.813rem, 0.767rem + 0.23vw, 0.938rem);

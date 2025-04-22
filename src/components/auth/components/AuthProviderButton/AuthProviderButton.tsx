@@ -19,7 +19,10 @@ export default function AuthProviderButton({
   )
 
   return (
-    <button className={useThemeClass(styles.button, styles.darkButton)}>
+    <button
+      type='button'
+      className={useThemeClass(styles.button, styles.darkButton)}
+    >
       <img
         src={icon === 'Google' ? '/images/icons/google.svg' : githubIcon}
         alt={icon}
