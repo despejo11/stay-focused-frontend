@@ -46,7 +46,7 @@ export default function Menu() {
               initial='initial'
               animate='animate'
               exit='exit'
-              src='/images/icons/close.svg'
+              src='/images/icons/whiteClose.svg'
               alt='Close'
             />
           ) : (

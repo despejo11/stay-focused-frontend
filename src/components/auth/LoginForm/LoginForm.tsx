@@ -1,13 +1,16 @@
 'use client'
 
 import styles from './style.module.scss'
+import ForgotPasswordForm from './ForgotPasswordForm/ForgotPasswordForm'
 import AuthProviderButton from '../components/AuthProviderButton/AuthProviderButton'
 import ShowPassword from '../components/ShowPassword/ShowPassword'
 import OrLine from '../components/OrLine/OrLine'
+import Popup from '@/components/Popup/Popup'
 import {
   getBorderColor,
   getErrorMessage,
   ILoginFormData,
+  IForgotPasswordFormData,
   sanitizeInput,
   transition,
 } from '../utils'
@@ -20,20 +23,52 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function LoginForm() {
   const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
+    register: registerLogin,
+    handleSubmit: handleLoginSubmit,
+    watch: watchLogin,
+    formState: { errors: loginErrors },
   } = useForm<ILoginFormData>({ mode: 'onChange' })
 
-  const [showPassword, setShowPassword] = useState(false)
+  const {
+    register: registerForgotPassword,
+    handleSubmit: handleForgotPasswordSubmit,
+    watch: watchForgotPassword,
+    formState: { errors: forgotPasswordErrors },
+  } = useForm<IForgotPasswordFormData>({ mode: 'onChange' })
 
-  const onSubmit: SubmitHandler<ILoginFormData> = (data) => {
-    console.log(data)
+  const [showPassword, setShowPassword] = useState(false)
+  const [openPopup, setOpenPopup] = useState(false)
+  const [step, setStep] = useState<1 | 2 | 3 | 4>(1)
+
+  const handleOpenPopup = () => {
+    setOpenPopup(true)
+  }
+
+  const onPopupSubmit: SubmitHandler<IForgotPasswordFormData> = async (
+    data
+  ) => {
+    if (step === 1) {
+      console.log('Step 1:', data)
+    }
+  }
+
+  const onLoginSubmit: SubmitHandler<ILoginFormData> = (data) => {
+    console.log('Login form data:', data)
   }
 
   return (
     <div className={styles.content}>
+      <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
+        <ForgotPasswordForm
+          step={step}
+          register={registerForgotPassword}
+          handleSubmit={handleForgotPasswordSubmit}
+          watch={watchForgotPassword}
+          errors={forgotPasswordErrors}
+          onSubmit={onPopupSubmit}
+        />
+      </Popup>
+
       <div className={styles.buttons}>
         <AuthProviderButton icon='Google' text='Log in with Google' />
         <AuthProviderButton icon='GitHub' text='Log in with GitHub' />
@@ -41,12 +76,12 @@ export default function LoginForm() {
 
       <OrLine />
 
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <form onSubmit={handleLoginSubmit(onLoginSubmit)} className={styles.form}>
         <div className={styles.inputs}>
           <div className={styles.input}>
             <p className={styles.title}>Email address</p>
             <motion.input
-              {...register('email', {
+              {...registerLogin('email', {
                 required: 'Required',
                 pattern: {
                   value:
@@ -59,7 +94,7 @@ export default function LoginForm() {
               autoComplete='email'
               onInput={sanitizeInput(/[^a-zA-Z0-9@._\-+]/g)}
               animate={{
-                borderColor: getBorderColor('email', watch, errors),
+                borderColor: getBorderColor('email', watchLogin, loginErrors),
               }}
               transition={{
                 duration: transition,
@@ -67,7 +102,7 @@ export default function LoginForm() {
               }}
             />
             <AnimatePresence mode='wait'>
-              {errors?.email && (
+              {loginErrors?.email && (
                 <motion.div
                   variants={fadeInOutVariants}
                   initial='initial'
@@ -76,7 +111,7 @@ export default function LoginForm() {
                   className={styles.error}
                 >
                   <img src='/images/icons/error.svg' alt='Error' />
-                  <p>{getErrorMessage(errors.email)}</p>
+                  <p>{getErrorMessage(loginErrors.email)}</p>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -86,13 +121,17 @@ export default function LoginForm() {
             <div className={styles.titleContainer}>
               <p className={styles.title}>Password</p>
 
-              <button type='button' className={styles.forgotButton}>
+              <button
+                onClick={handleOpenPopup}
+                type='button'
+                className={styles.forgotButton}
+              >
                 Forgot password?
               </button>
             </div>
 
             <motion.input
-              {...register('password', {
+              {...registerLogin('password', {
                 required: 'Required',
                 pattern: {
                   value:
@@ -113,7 +152,11 @@ export default function LoginForm() {
               autoComplete='new-password'
               onInput={sanitizeInput(/[^\x00-\x7F]/)}
               animate={{
-                borderColor: getBorderColor('password', watch, errors),
+                borderColor: getBorderColor(
+                  'password',
+                  watchLogin,
+                  loginErrors
+                ),
               }}
               transition={{
                 duration: transition,
@@ -121,7 +164,7 @@ export default function LoginForm() {
               }}
             />
             <AnimatePresence mode='wait'>
-              {errors?.password && (
+              {loginErrors?.password && (
                 <motion.div
                   variants={fadeInOutVariants}
                   initial='initial'
@@ -130,7 +173,7 @@ export default function LoginForm() {
                   className={styles.error}
                 >
                   <img src='/images/icons/error.svg' alt='Error' />
-                  <p>{getErrorMessage(errors.password)}</p>
+                  <p>{getErrorMessage(loginErrors.password)}</p>
                 </motion.div>
               )}
             </AnimatePresence>
