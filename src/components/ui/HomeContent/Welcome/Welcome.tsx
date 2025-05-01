@@ -18,7 +18,7 @@ export default function Welcome() {
           alt='Pattern'
         />
 
-        <IconButton link='home' text='Get Started' />
+        <IconButton link='methodologies' text='Get Started' />
       </div>
     </div>
   )

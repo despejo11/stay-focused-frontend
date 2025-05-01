@@ -101,7 +101,7 @@ export default function Menu() {
                 </TransitionLink>
                 <TransitionLink
                   className={styles.link}
-                  href={PagesConfig.home}
+                  href={PagesConfig.methodologies}
                   onClick={handleLinkClick}
                 >
                   Methodologies

@@ -27,7 +27,7 @@ export default function Footer() {
               <div className={styles.links}>
                 <p className={styles.title}>Navigation</p>
                 <TransitionLink href={PagesConfig.home}>Home</TransitionLink>
-                <TransitionLink href={PagesConfig.home}>
+                <TransitionLink href={PagesConfig.methodologies}>
                   Methodologies
                 </TransitionLink>
                 <TransitionLink href={PagesConfig.about}>About</TransitionLink>

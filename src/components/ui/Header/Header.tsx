@@ -20,7 +20,7 @@ export default function Header() {
             <div>
               <TransitionLink href={PagesConfig.home}>Home</TransitionLink>
               <TransitionLink href={PagesConfig.about}>About</TransitionLink>
-              <TransitionLink href={PagesConfig.home}>
+              <TransitionLink href={PagesConfig.methodologies}>
                 Methodologies
               </TransitionLink>
             </div>
