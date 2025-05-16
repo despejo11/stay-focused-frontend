@@ -1,0 +1,159 @@
+@import '@/styles/index.scss';
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+
+  audio {
+    display: none;
+  }
+
+  .alarm {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 270px;
+
+    .firstLines {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      rotate: -43deg;
+
+      span {
+        background-color: $blue;
+        width: 40px;
+        height: 2px;
+        display: inline;
+      }
+    }
+
+    .secondLines {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      rotate: 43deg;
+
+      span {
+        background-color: $blue;
+        width: 40px;
+        height: 2px;
+        display: inline;
+      }
+    }
+  }
+
+  .circle {
+    transform: rotate(-90deg);
+    width: 400px;
+    height: 400px;
+
+    .background {
+      fill: none;
+      stroke: $blue;
+      opacity: 0.1;
+      stroke-width: 7px;
+    }
+
+    .progressTail {
+      stroke-width: 7px;
+      transform-origin: center;
+    }
+  }
+
+  .phaseIcon {
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    letter-spacing: 0.8px;
+    color: $gray;
+    user-select: none;
+    text-transform: uppercase;
+  }
+
+  .time {
+    font-family: 'Orbitron', sans-serif;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 68px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 2px;
+    user-select: none;
+  }
+
+  .setsIndicator {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 9px;
+
+    .set {
+      width: 2.7px;
+      height: 17px;
+      border-radius: 4px;
+      background-color: #bababe;
+      transition: background-color $tr ease;
+
+      &.completed {
+        background-color: $blue;
+      }
+
+      &.active {
+        background-color: #979799;
+      }
+    }
+
+    .darkSet {
+      background-color: $gray;
+
+      &.active {
+        background-color: #aaaaad;
+      }
+    }
+  }
+
+  .phaseText {
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    color: $gray;
+    user-select: none;
+    text-transform: uppercase;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 33px;
+
+    .defaultButton {
+      @include defaultButton(106px, 36px, 14.4px, $darkBlue, $gray);
+      @include hover($gray, null);
+      border-radius: 90px;
+    }
+
+    .roundButton {
+      @include defaultButton(36px, 36px, null, $darkBlue, $gray);
+      @include hover($gray, null);
+      border-radius: 50%;
+
+      img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
